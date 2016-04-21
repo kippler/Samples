@@ -21,9 +21,6 @@
     <ClInclude Include="XString.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="XPathUtil.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -33,9 +30,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="XString.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="XPathUtil.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

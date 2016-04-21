@@ -3,7 +3,6 @@
 
 #include "stdafx.h"
 #include "XString.h"
-#include "XPathUtil.h"
 
 void Assign()
 {

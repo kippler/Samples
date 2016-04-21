@@ -48,3 +48,11 @@ Temporary Items
 *.suo
 *.pdb
 *.sdf
+*.tlog
+XStringTest/x64/Debug/main.obj
+*.obj
+*.log
+XStringTest/x64/Debug/XStringTest.pch
+*.ilk
+XStringTest/x64/Debug/vc140.idb
+*.exe
