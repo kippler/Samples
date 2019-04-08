@@ -56,3 +56,7 @@ XStringTest/x64/Debug/XStringTest.pch
 *.ilk
 XStringTest/x64/Debug/vc140.idb
 *.exe
+*.idb
+*.dll
+*.lib
+*.exp
