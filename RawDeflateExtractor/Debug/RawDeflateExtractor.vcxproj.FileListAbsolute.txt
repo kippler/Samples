@@ -1,0 +1,2 @@
+C:\Github\Samples\RawDeflateExtractor\Debug\RawDeflateExtractor.exe
+C:\Github\Samples\RawDeflateExtractor\Debug\RawDeflateExtractor.pdb
