@@ -60,3 +60,6 @@ XStringTest/x64/Debug/vc140.idb
 *.dll
 *.lib
 *.exp
+
+
+.vs

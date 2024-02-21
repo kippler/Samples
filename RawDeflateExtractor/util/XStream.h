@@ -145,8 +145,8 @@ public :
 	enum { LEN_BUF = 8192 };
 	HANDLE	m_handle;
 	BYTE*	m_buf;
-	BYTE*	m_left;					// m_buf 내 현재 데이타 시작 위치.
-	BYTE*	m_right;				// m_buf 내 유효한 데이타 끝 위치-1
+	BYTE*	m_left;					// m_buf 내 현재 데이터 시작 위치.
+	BYTE*	m_right;				// m_buf 내 유효한 데이터 끝 위치-1
 
 	INT64	m_virtPos;				// 가상의 파일 포인터
 	INT64	m_size;
@@ -343,7 +343,7 @@ public:
 		data = NULL;
 		dataSize = allocSize = 0;
 	}
-	// 특정 크기로 메모리를 잡는다. 데이타 크기는 0 으로 세팅된다.
+	// 특정 크기로 메모리를 잡는다. 데이터 크기는 0 으로 세팅된다.
 	BOOL	Alloc(int count)
 	{
 		if (data && allocSize == count) return TRUE;	// 동일하다. 할꺼 없다.
@@ -354,7 +354,7 @@ public:
 		dataSize = 0;
 		return TRUE;
 	}
-	// 메모리 alloc 을 다시 한다. 데이타 크기는 그대로 이다.
+	// 메모리 alloc 을 다시 한다. 데이터 크기는 그대로 이다.
 	BOOL	Realloc(int count)
 	{
 		if (data && allocSize == count) return TRUE;		// 동일하다. 할꺼 없다.
@@ -365,7 +365,7 @@ public:
 		allocSize = count;
 		return TRUE;
 	}
-	// 이전 데이타는 FREE 하고, CALLC 을 호출한다. 
+	// 이전 데이터는 FREE 하고, CALLC 을 호출한다.
 	BOOL	Calloc(int count)
 	{
 		if (data) free(data);
@@ -392,7 +392,7 @@ public:
 
 public:
 	BYTE*	data;
-	int		dataSize;		// 버퍼의 유효한 데이타 크기 - 서로 크기를 주고받을때 사용한다.
+	int		dataSize;		// 버퍼의 유효한 데이터 크기 - 서로 크기를 주고받을때 사용한다.
 	int		allocSize;		// 버퍼의 alloc된 크기
 };
 

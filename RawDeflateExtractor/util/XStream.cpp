@@ -67,7 +67,7 @@ BOOL XFileReadStream::Read(LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD 
 
 	while(remain2copy)
 	{
-		// 버퍼에 데이타 있으면... 복사하기
+		// 버퍼에 데이터 있으면... 복사하기
 		if (m_left < m_right)
 		{
 			const int valid_buf_len = (int)(m_right - m_left);
@@ -406,7 +406,7 @@ BOOL XMemoryReadStream::OpenFile(LPCWSTR filePathName)
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-///         데이타 attach 하기
+///         데이터 attach 하기
 /// @param  
 /// @return 
 /// @date   Friday, October 16, 2015  2:44:05 PM
@@ -468,7 +468,7 @@ BOOL	XFileWriteStream::Write(LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite)
 		if(FlushBuffer()==FALSE)		// 버퍼 비우고
 			return FALSE;
 
-		// 입력받은 데이타를 그대로 파일에 쓴다.
+		// 입력받은 데이터를 그대로 파일에 쓴다.
 		DWORD written;
 		if(::WriteFile(m_handle, userBuffer, nNumberOfBytesToWrite, &written, nullptr)==FALSE ||
 			written!=nNumberOfBytesToWrite)								// written!=nNumberOfBytesToWrite 는 발생하지 않는다!
@@ -852,7 +852,7 @@ bool XFile::ReadWhole(XBuffer& buffer) const
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-///         임시 파일을 생성하고, 데이타를 쓴다.
+///         임시 파일을 생성하고, 데이터를 쓴다.
 /// @param  
 /// @return 
 /// @date   Thu Sep  6 15:01:42 2018
