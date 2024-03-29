@@ -1,12 +1,12 @@
-#include "stdafx.h"
+Ôªø#include "stdafx.h"
 #include "MainWnd.h"
 #include "resource.h"
 
-#define	APP_NAME				_T("AtlWinApp")
-#define APP_CLASS_NAME			_T("AtlWinAppClass")
-#define APP_TITLE				_T("AtlWinApp")
+#define	APP_NAME				L"AtlWinApp"
+#define APP_CLASS_NAME			L"AtlWinAppClass"
+#define APP_TITLE				L"AtlWinApp"
 
-CMainWnd::CMainWnd(void)
+CMainWnd::CMainWnd(void) noexcept
 {
 }
 
@@ -14,32 +14,33 @@ CMainWnd::~CMainWnd(void)
 {
 }
 
-BOOL CMainWnd::Create()
+BOOL CMainWnd::CreateMainWindow()
 {
-	// atl ¿©µµøÏ ª˝º∫
+	// atl ÏúàÎèÑÏö∞ ÏÉùÏÑ±
 	CWndClassInfo &winInfo = GetWndClassInfo();
 	winInfo.m_wc.lpszClassName = APP_CLASS_NAME;
 	winInfo.m_wc.style = CS_DBLCLKS;
-	winInfo.m_wc.hbrBackground = NULL;	
+	winInfo.m_wc.hbrBackground = nullptr;
 	winInfo.m_wc.hIcon = ::LoadIcon(_Module.m_hInst, MAKEINTRESOURCE(IDI_MAIN));
+	CRect rWnd(0, 0, 640, 480);
 
-	__super::Create(NULL, CRect(0,0,640,480),  APP_NAME, WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
+	__super::Create(nullptr, &rWnd,  APP_NAME, WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
 	CenterWindow();
 
-	// ∫∏¿Ã±‚
+	// Î≥¥Ïù¥Í∏∞
 	ShowWindow(SW_SHOW);
 	DragAcceptFiles(TRUE);
 
 	return TRUE;
 }
 
-LRESULT CMainWnd::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
+LRESULT CMainWnd::OnDestroy(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/) noexcept
 {
 	PostQuitMessage(0);
 	return 0;
 }
 
-BOOL CMainWnd::PreTranslateMessage(MSG* pMsg)
+BOOL CMainWnd::PreTranslateMessage(MSG* /*pMsg*/) noexcept
 {
 	return FALSE;
 }

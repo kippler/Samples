@@ -63,3 +63,9 @@ XStringTest/x64/Debug/vc140.idb
 
 
 .vs
+
+*.user
+
+Debug
+Release
+*.lastcodeanalysissucceeded
